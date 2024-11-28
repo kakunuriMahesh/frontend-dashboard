@@ -101,14 +101,14 @@ const CardList = ({ items, manualItems, onDelete, openForm }) => {
           </p>
         </div>
       </div>
-      <div className="z-20 fixed bottom-[0px] w-[95vw] rounded-xl p-4 justify-between bg-white flex items-center md:w-fit md:rounded-none md:p-0 md:left-4">
+      <div className="z-20 fixed bottom-[10px] w-[95vw] rounded-xl p-4 justify-between bg-white flex items-center md:w-fit md:rounded-none md:p-0 md:left-4">
         <Filter/>
         <h1 className="text-sm ml-3 md:hidden">{items.length} Log items</h1>
       </div>
 
       <div className="flex justify-center items-center w-[100vw] h-[100]">
         <div
-          className={`px-8 w-[100vw] mt-[100px] ${
+          className={`px-8 w-[100vw] mb-[110px] md:mb-0 mt-[100px] ${
             view ? "flex flex-wrap" : "grid grid-cols"
           }`}
         >
