@@ -6,7 +6,7 @@ import { usersContext } from "../../Context/usersContext";
 
 const Filter = () => {
 
-  const { appliedFilter } = useContext(usersContext);
+  const { appliedFilter, items } = useContext(usersContext);
   
   const [isOpen, setIsOpen] = useState(false);
   const [filters, setFilters] = useState({
@@ -65,7 +65,7 @@ const Filter = () => {
         onClick={toggleDropdown}
         className={`cursor-pointer w-fit text-center flex justify-between items-center bg-white border-slate-800 border p-2 rounded-md`}
       >
-        <HiOutlineFilter className="mr-0 md:m-2" /> <span className="hidden md:visible">Filter</span>
+        <HiOutlineFilter className="mr-0 md:m-2" /><p className="flex"><span className="hidden md:block">{items.length} Filter</span> <span className="visible md:hidden"> Filter</span></p>
       </button>
 
       {isOpen && (

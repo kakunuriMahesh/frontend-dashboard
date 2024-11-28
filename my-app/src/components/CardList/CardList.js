@@ -101,11 +101,9 @@ const CardList = ({ items, manualItems, onDelete, openForm }) => {
           </p>
         </div>
       </div>
-      <div className="z-20 fixed bottom-[30px] left-4 flex items-center">
-        <Filter />
-        <h1 className="hidden text-sm ml-3 md:visible">
-          {items.length} Log items
-        </h1>
+      <div className="z-20 fixed bottom-[0px] w-[95vw] rounded-xl p-4 justify-between bg-white flex items-center md:w-fit md:rounded-none md:p-0 md:left-4">
+        <Filter/>
+        <h1 className="text-sm ml-3 md:hidden">{items.length} Log items</h1>
       </div>
 
       <div className="flex justify-center items-center w-[100vw] h-[100]">
@@ -127,7 +125,6 @@ const CardList = ({ items, manualItems, onDelete, openForm }) => {
             onClick={openForm}
           />
           {itemsData.length !== 0 ? (
-          
             itemsData.map((eachItem) => (
               <div
                 key={eachItem.id}
@@ -151,9 +148,9 @@ const CardList = ({ items, manualItems, onDelete, openForm }) => {
                       }`}
                     >
                       {eachItem.gender === "male" ? (
-                        <MdOutlinePerson className="mr-1 text-xl" />
+                        <MdOutlinePerson className="mr-1 text-xl w-5 h-5 flex-shrink-0" />
                       ) : (
-                        <MdOutlinePerson2 className="mr-1 text-xl" />
+                        <MdOutlinePerson2 className="mr-1 text-xl w-5 h-5 flex-shrink-0" />
                       )}
 
                       {/* Hover effect for name: Display full name when hovered */}
@@ -189,10 +186,10 @@ const CardList = ({ items, manualItems, onDelete, openForm }) => {
                     {/* Hover effect for email */}
                     <div
                       className={`flex items-center ${
-                        view ? "" : "w-[30%] hidden md:flex"
-                      }`}
+                        view ? "" : "hidden md:flex"
+                      } flex-nowrap`}
                     >
-                      <MdOutlineMailOutline className="mr-1 text-xl" />
+                      <MdOutlineMailOutline className="mr-1 text-xl w-5 h-5 flex-shrink-0" />
                       <div>
                         {(() => {
                           const email = eachItem.email.split("@");
@@ -208,6 +205,7 @@ const CardList = ({ items, manualItems, onDelete, openForm }) => {
                           return (
                             <div className="flex items-center mr-5">
                               <span
+                                className=""
                                 onMouseEnter={() =>
                                   setHoveredInfo({
                                     type: "email",
@@ -245,9 +243,9 @@ const CardList = ({ items, manualItems, onDelete, openForm }) => {
                     >
                       <span>
                         {eachItem.gender === "male" ? (
-                          <CgGenderMale className="mr-1 text-xl" />
+                          <CgGenderMale className="mr-1 text-xl w-5 h-5 flex-shrink-0" />
                         ) : (
-                          <CgGenderFemale className="mr-1 text-xl" />
+                          <CgGenderFemale className="mr-1 text-xl w-5 h-5 flex-shrink-0" />
                         )}
                       </span>
                       {capitalizeFirstLetter(eachItem.gender)}
@@ -260,9 +258,9 @@ const CardList = ({ items, manualItems, onDelete, openForm }) => {
                       }`}
                     >
                       {eachItem.status === "inactive" ? (
-                        <HiOutlineExclamationCircle className="mr-1 text-xl" />
+                        <HiOutlineExclamationCircle className="mr-1 text-xl w-5 h-5 flex-shrink-0" />
                       ) : (
-                        <HiOutlineCheckCircle className="mr-1 text-xl" />
+                        <HiOutlineCheckCircle className="mr-1 text-xl w-5 h-5 flex-shrink-0" />
                       )}
                       {capitalizeFirstLetter(eachItem.status)}
                     </p>
@@ -282,8 +280,6 @@ const CardList = ({ items, manualItems, onDelete, openForm }) => {
               <p>{info !== "" ? info : "Loading..."}</p>
             </div>
           )}
-
-          
         </div>
       </div>
     </div>
