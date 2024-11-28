@@ -4,7 +4,7 @@ import { UsersContextProvider } from "./Context/usersContext";
 
 function App() {
   return (
-    <div className="">
+    <div>
       <UsersContextProvider>  
         <BackDashBoard />
       </UsersContextProvider>   
