@@ -6,7 +6,7 @@ import { usersContext } from "../../Context/usersContext";
 
 const Filter = () => {
 
-  const { appliedFilter , manualFilter} = useContext(usersContext);
+  const { appliedFilter } = useContext(usersContext);
   
   const [isOpen, setIsOpen] = useState(false);
   const [filters, setFilters] = useState({
@@ -60,12 +60,12 @@ const Filter = () => {
 
   return (
     <div className="relative z-50">
-      {console.log(manualFilter.length)}
+      {/* {console.log(manualFilter.length)} */}
       <button
         onClick={toggleDropdown}
-        className={`cursor-pointer w-[80px] text-center flex justify-between items-center ml-auto border-slate-800 border px-2 rounded-md`}
+        className={`cursor-pointer w-fit text-center flex justify-between items-center bg-white border-slate-800 border p-2 rounded-md`}
       >
-        <HiOutlineFilter className="mr-2" /> Filter
+        <HiOutlineFilter className="mr-0 md:m-2" /> <span className="hidden md:visible">Filter</span>
       </button>
 
       {isOpen && (

@@ -4,12 +4,12 @@ import { ToastContainer } from "react-toastify";
 import CardList from "../CardList/CardList";
 import { usersContext } from "../../Context/usersContext";
 import { RxCross2 } from "react-icons/rx";
-import { FaSearch } from "react-icons/fa";
+// import { FaSearch } from "react-icons/fa";
 
 const BackDashBoard = () => {
   const {
     filteredItems,
-    filterItems,
+    // filterItems,
     manualFilter,
     form,
     info,
@@ -41,10 +41,10 @@ const BackDashBoard = () => {
     // }
   };
 
-  const filterData = (e) => {
-    const filterInput = e.target.value.toLowerCase();
-    filterItems(filterInput);
-  };
+  // const filterData = (e) => {
+  //   const filterInput = e.target.value.toLowerCase();
+  //   filterItems(filterInput);
+  // };
 
   const handleDeleteItem = (id) => {
     console.log(id);
@@ -53,20 +53,21 @@ const BackDashBoard = () => {
 
   return (
     <div className="h-full flex flex-col justify-center items-center">
-      <div className="text-center  w-full p-8">
-        <h1 className="text-5xl">Log Details here :)</h1>
-        <div className="flex items-center justify-center mt-9">
-          <div className="relative flex items-center">
-            <input
-              type="text"
-              onChange={filterData}
-              placeholder="Search..."
-              className="pl-10 pr-4 py-2 w-64 border border-gray-300 rounded-full focus:outline-none"
-            />
-            <FaSearch className="absolute left-3 text-gray-500" />
-          </div>
+      
+
+      {/* <div className="sticky z-50 top-[0px] flex items-center justify-center w-[100vw] bg-white py-3">
+        <div className="relative w-64">
+          <input
+            type="text"
+            onChange={filterData}
+            placeholder="Search..."
+            className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-full focus:outline-none"
+          />
+          <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
         </div>
-      </div>
+      </div> */}
+
+    
 
       {form && (
         <div
@@ -161,7 +162,7 @@ const BackDashBoard = () => {
         />
       ) : (
         <div className="h-[80vh] flex items-center justify-center">
-          <p>{info!==""?info:"Loading..."}</p>
+          <p>{info !== "" ? info : "Loading..."}</p>
         </div>
       )}
     </div>
