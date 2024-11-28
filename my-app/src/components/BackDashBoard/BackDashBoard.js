@@ -12,7 +12,7 @@ const BackDashBoard = () => {
     // filterItems,
     manualFilter,
     form,
-    info,
+    // info,
     formControl,
     addItems,
     deleteItem,
@@ -153,18 +153,18 @@ const BackDashBoard = () => {
         </div>
       )}
       <ToastContainer />
-      {filteredItems.length !== 0 ? (
+      {/* {filteredItems.length !== 0 ? ( */}
         <CardList
           manualItems={manualFilter}
           items={filteredItems}
           onDelete={handleDeleteItem}
           openForm={formControl}
         />
-      ) : (
+      {/* ) : (
         <div className="h-[80vh] flex items-center justify-center">
           <p>{info !== "" ? info : "Loading..."}</p>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
